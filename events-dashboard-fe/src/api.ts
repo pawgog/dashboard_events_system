@@ -6,8 +6,7 @@ export async function fetchLogs(
 ) {
   const query = buildLogsQuery(params);
 
-  const response = await fetch(`/api/logs?${query}`, {
-    credentials: 'include',
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/logs?${query}`, {
     signal,
   });
 
